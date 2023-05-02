@@ -4,6 +4,8 @@ email-validator==2.0.0          # FastApi dependency
 uvicorn==0.22.0                 # FastApi dependency
 sqlalchemy==2.0.12              # Database / SQL ORM
 psycopg2==2.9.6                 # Database / PostgreSQL driver
+firebase-admin==6.1.0           # Firebase Admin SDK
+requests==2.29.0                # HTTP client
 
 
 # Testing and Linting. These libraries are not required for the application to run

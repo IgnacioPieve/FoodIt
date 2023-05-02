@@ -1,3 +1,4 @@
+import os
 
 # ---------- METADATA ----------
 title = "FoodIt"
@@ -21,3 +22,5 @@ metadata = {
 # ---------- CONFIG VARIABLES ----------
 
 DB_URL = f"postgresql+psycopg2://foodit:foodit@foodit-database:5432/app"
+FIREBASE_JSON = "credentials/firebase.json"
+FIREBASE_KEY = os.getenv("FIREBASE_KEY")

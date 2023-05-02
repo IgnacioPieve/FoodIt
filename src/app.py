@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 import config
 from database import Base, engine
+from routers import dev_tools, user, ingredient
 
 # ----- DATABASE -----
 Base.metadata.create_all(bind=engine)
@@ -10,6 +11,9 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(**config.metadata)
 
 # ----- ROUTERS -----
+app.include_router(dev_tools.router)
+app.include_router(user.router)
+app.include_router(ingredient.router)
 
 if __name__ == "__main__":
     import uvicorn
