@@ -1,0 +1,8 @@
+.idea
+__pycache__/
+venv/
+src/.pytest_cache/
+src/store/
+src/credentials/
+!src/credentials/readme.md
+/.pytest_cache/

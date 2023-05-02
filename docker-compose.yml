@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  database:
+    container_name: foodit-database
+    image: postgres:latest
+    restart: 'always'
+    environment:
+      POSTGRES_USER: 'foodit'
+      POSTGRES_PASSWORD: 'foodit'
+      POSTGRES_DB: 'app'
+    ports:
+      - "12000:5432"
+  app:
+    container_name: foodit-backend
+    build: .
+    restart: 'always'
+    depends_on:
+      - database
+    stdin_open: true
+    tty: true
+    ports:
+      - "12001:8000"
+    volumes:
+      - .:/app
+    command: python app.py
